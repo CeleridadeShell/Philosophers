@@ -6,13 +6,14 @@ HEADER_PATH		= $(addprefix $(HEADER_DIR), $(HEADER))
 
 SRC_DIR			= ./src/
 SRC				= 	main.c \
-					ft_isdigit.c \
-					ft_atoi.c \
+					utils/ft_isdigit.c \
+					utils/ft_atoi.c \
+					utils/convert_args.c \
 					validation/validation_utils.c
 SRC_PATH		= $(addprefix $(SRC_DIR), $(SRC))
 
 CC				= gcc
-CFLAGS			= -Wall -Wextra -Werror
+CFLAGS			= -Wall -Wextra -Werror -pthread
 
 BIN				= ./bin/
 BINARY_OUT		= $(addprefix $(BIN), $(NAME))
