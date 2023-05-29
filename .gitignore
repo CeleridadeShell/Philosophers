@@ -52,5 +52,5 @@ Mkfile.old
 dkms.conf
 
 # Relevant to this project
-/bin
+/philo/bin
 .vscode
