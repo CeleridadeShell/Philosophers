@@ -6,7 +6,7 @@
 /*   By: ccamargo <ccamargo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 18:34:14 by ccamargo          #+#    #+#             */
-/*   Updated: 2023/05/30 15:25:16 by ccamargo         ###   ########.fr       */
+/*   Updated: 2023/05/30 16:29:10 by ccamargo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 
 void	*philo_life(void *philo_num)
 {
-	printf("Philosopher %d is eating.\n", *(int *)philo_num);
-	printf("Philosopher %d is sleeping.\n", *(int *)philo_num);
-	printf("Philosopher %d is thinking.\n", *(int *)philo_num);
+	struct timeval time_elapsed;
+
+	gettimeofday(&time_elapsed, NULL);
+	printf("%ld Philosopher %d is eating.\n", (time_elapsed.tv_usec / 1000), *(int *)philo_num);
+	printf("%ld Philosopher %d is sleeping.\n", (time_elapsed.tv_usec / 1000), *(int *)philo_num);
+	printf("%ld Philosopher %d is thinking.\n", (time_elapsed.tv_usec / 1000), *(int *)philo_num);
 	free(philo_num);
 	return (NULL);
 }

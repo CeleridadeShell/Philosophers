@@ -6,7 +6,7 @@
 /*   By: ccamargo <ccamargo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 19:17:46 by ccamargo          #+#    #+#             */
-/*   Updated: 2023/05/25 19:26:48 by ccamargo         ###   ########.fr       */
+/*   Updated: 2023/05/30 15:57:14 by ccamargo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static int	are_params_numbers(char **argv)
 			if (!ft_isdigit(argv[i][j]))
 			{
 				printf("Error! ");
-				printf("All parameters must be numbers!\n");
+				printf("All parameters must be positive numbers!\n");
 				return (0);
 			}
 			j++;
