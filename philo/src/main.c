@@ -6,7 +6,7 @@
 /*   By: ccamargo <ccamargo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 18:34:14 by ccamargo          #+#    #+#             */
-/*   Updated: 2023/05/30 01:37:19 by ccamargo         ###   ########.fr       */
+/*   Updated: 2023/05/30 02:26:16 by ccamargo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	run_life_cycle(t_args args)
 		pthread_join(philos[i], NULL);
 		i++;
 	}
+	free(philos);
 }
 
 int	main(int argc, char **argv)
