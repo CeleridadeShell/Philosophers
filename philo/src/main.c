@@ -6,7 +6,7 @@
 /*   By: ccamargo <ccamargo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 18:34:14 by ccamargo          #+#    #+#             */
-/*   Updated: 2023/05/30 04:51:28 by ccamargo         ###   ########.fr       */
+/*   Updated: 2023/05/30 15:25:16 by ccamargo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,26 @@ void	*philo_life(void *philo_num)
 	printf("Philosopher %d is eating.\n", *(int *)philo_num);
 	printf("Philosopher %d is sleeping.\n", *(int *)philo_num);
 	printf("Philosopher %d is thinking.\n", *(int *)philo_num);
+	free(philo_num);
 	return (NULL);
 }
 
 void	run_life_cycle(t_args args)
 {
 	int			i;
+	int			*i2;
 	pthread_t	*philos;
 
 	i = 0;
 	philos = malloc(sizeof(pthread_t) * args.num_of_philos);
 	while (i < args.num_of_philos)
 	{
-		if (pthread_create(&philos[i], NULL, &philo_life, (void *) &i))
+		i2 = malloc(sizeof(int));
+		*i2 = i;
+		if (pthread_create(&philos[i], NULL, &philo_life, (void *) i2))
 		{
 			free(philos);
+			free(i2);
 			return ;
 		}
 		i++;
