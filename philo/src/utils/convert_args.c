@@ -6,7 +6,7 @@
 /*   By: ccamargo <ccamargo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 01:18:48 by ccamargo          #+#    #+#             */
-/*   Updated: 2023/05/31 01:07:30 by ccamargo         ###   ########.fr       */
+/*   Updated: 2023/05/31 21:41:15 by ccamargo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,7 @@ t_common_data	convert_args(char **argv)
 		common.opt_num_of_meals = ft_atoi(argv[5]);
 	else
 		common.opt_num_of_meals = -1;
+	common.timestamp_init = -1;
+	common.timestamp_current = -1;
 	return (common);
 }

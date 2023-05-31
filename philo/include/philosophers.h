@@ -6,7 +6,7 @@
 /*   By: ccamargo <ccamargo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 18:35:47 by ccamargo          #+#    #+#             */
-/*   Updated: 2023/05/31 03:05:14 by ccamargo         ###   ########.fr       */
+/*   Updated: 2023/05/31 22:49:08 by ccamargo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,20 @@
 
 typedef struct s_common_data
 {
-	int	num_of_philos;
-	int	time_to_die;
-	int	time_to_eat;
-	int	time_to_sleep;
-	int	opt_num_of_meals;
+	int			num_of_philos;
+	int			time_to_die;
+	int			time_to_eat;
+	int			time_to_sleep;
+	int			opt_num_of_meals;
+	long long	timestamp_init;
+	long long	timestamp_current;
 }	t_common_data;
 
 typedef struct s_philo
 {
 	t_common_data	*common_data;
 	int				id;
-	long long		timestamp_init;
-	long long		timestamp_current;
+	int				meals_had;
 }	t_philo;
 
 //Validation Utils
@@ -45,6 +46,7 @@ void			initialize_philo(t_philo *philo, t_common_data *common, int i);
 
 //Time Utils
 void			set_timestamps(t_philo *philo);
+long long		get_current_timestamp(t_philo *philo);
 
 //Free Utils
 void			free_philos(t_philo **philos, int num_of_philos);
