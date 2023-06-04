@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   convert_args.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: ccamargo <ccamargo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 01:18:48 by ccamargo          #+#    #+#             */
-/*   Updated: 2023/06/03 20:13:54 by mcarecho         ###   ########.fr       */
+/*   Updated: 2023/06/04 23:04:39 by ccamargo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_common_data	*convert_args(char **argv)
 	t_common_data	*common;
 	int i;
 
-	i = -1;
+	i = 0;
 	common = malloc(sizeof(t_common_data));
 	common->num_of_philos = ft_atoi(argv[1]);
 	common->time_to_die = ft_atoi(argv[2]);
@@ -31,11 +31,19 @@ t_common_data	*convert_args(char **argv)
 	common->timestamp_current = -1;
 	common->fork = malloc(sizeof(pthread_mutex_t *) * common->num_of_philos);
 	common->print = malloc(sizeof(pthread_mutex_t));
+	pthread_mutex_init(common->print, NULL);
 	common->someone_died = 0;
-	while(common->num_of_philos > ++i)
+	common->dead_or_alive = malloc(sizeof(pthread_mutex_t));
+	pthread_mutex_init(common->dead_or_alive, NULL);
+	common->time = malloc(sizeof(pthread_mutex_t));
+	pthread_mutex_init(common->time, NULL);
+	common->last_meal_mutex = malloc(sizeof(pthread_mutex_t));
+	pthread_mutex_init(common->last_meal_mutex, NULL);
+	while(common->num_of_philos > i)
 	{
 		common->fork[i] = malloc(sizeof(pthread_mutex_t));
 		pthread_mutex_init(common->fork[i], NULL);
+		i++;
 	}
 	return (common);
 }

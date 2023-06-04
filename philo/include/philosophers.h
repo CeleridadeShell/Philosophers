@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: ccamargo <ccamargo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 18:35:47 by ccamargo          #+#    #+#             */
-/*   Updated: 2023/06/03 20:07:08 by mcarecho         ###   ########.fr       */
+/*   Updated: 2023/06/04 22:50:47 by ccamargo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,9 @@ typedef struct s_common_data
 	long long		timestamp_current;
 	pthread_mutex_t	**fork;
 	pthread_mutex_t *print;
-
+	pthread_mutex_t *time;
+	pthread_mutex_t *dead_or_alive;
+	pthread_mutex_t *last_meal_mutex;
 }	t_common_data;
 
 typedef struct s_philo

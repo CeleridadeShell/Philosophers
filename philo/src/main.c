@@ -3,19 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: ccamargo <ccamargo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 18:34:14 by ccamargo          #+#    #+#             */
-/*   Updated: 2023/06/04 17:21:24 by mcarecho         ###   ########.fr       */
+/*   Updated: 2023/06/04 22:57:31 by ccamargo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <philosophers.h>
 
-int verify_end(t_philo * philo)
+int verify_end(t_philo *philo)
 {
+	pthread_mutex_lock(philo->common_data->dead_or_alive);
 	if (philo->common_data->someone_died == 1)
+	{
+		pthread_mutex_unlock(philo->common_data->dead_or_alive);
 		return (1);
+	}
+	pthread_mutex_unlock(philo->common_data->dead_or_alive);
 	if (philo->common_data->opt_num_of_meals != -1 &&
 	philo->meals_had > philo->common_data->opt_num_of_meals)
 		return (1);
@@ -56,7 +61,9 @@ void	*philo_life(void *philo_data)
 		pthread_mutex_unlock(philo->common_data->print);
 		usleep((philo)->common_data->time_to_eat * 1000);
 		philo->meals_had++;
+		pthread_mutex_lock(philo->common_data->last_meal_mutex);
 		philo->last_meal = get_current_timestamp(philo);
+		pthread_mutex_unlock(philo->common_data->last_meal_mutex);
 		pthread_mutex_unlock(philo->left_fork);
 		pthread_mutex_unlock(philo->right_fork);
 		if (verify_end(philo) == 1)
@@ -89,23 +96,27 @@ void * monitor_life(void * data_monitor)
 		return (NULL);
 	while(1)
 	{
+		pthread_mutex_lock(philos[i]->common_data->last_meal_mutex);
 		if (get_current_timestamp(philos[i]) - philos[i]->last_meal > \
 		philos[i]->common_data->time_to_die)
 		{
-
+			pthread_mutex_unlock(philos[i]->common_data->last_meal_mutex);
 			while (eats_count < philos[i]->common_data->num_of_philos && philos[eats_count]->meals_had - 1 == philos[eats_count]->common_data->opt_num_of_meals) {
 				eats_count++;
 			}
 			if (eats_count == philos[i]->common_data->num_of_philos && philos[i]->common_data->opt_num_of_meals != -1) {
 				return (NULL);
 			}
+			pthread_mutex_lock(philos[i]->common_data->dead_or_alive);
 			philos[i]->common_data->someone_died = 1;
+			pthread_mutex_unlock(philos[i]->common_data->dead_or_alive);
 			pthread_mutex_lock(philos[i]->common_data->print);
 			printf("%lld Philosopher %d died.\n", \
 			get_current_timestamp(philos[i]), philos[i]->id + 1);
 			pthread_mutex_unlock(philos[i]->common_data->print);
 			return (NULL);
 		}
+		pthread_mutex_unlock(philos[i]->common_data->last_meal_mutex);
 		i++;
 		if (i == philos[i]->common_data->num_of_philos - 1)
 			i = 0;
