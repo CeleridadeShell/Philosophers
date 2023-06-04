@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validation_utils.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: ccamargo <ccamargo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 19:17:46 by ccamargo          #+#    #+#             */
-/*   Updated: 2023/06/03 17:50:45 by mcarecho         ###   ########.fr       */
+/*   Updated: 2023/06/05 00:20:45 by ccamargo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,5 @@ int	is_input_valid(int argc, char **argv)
 		return (0);
 	if (!are_params_numbers(argv))
 		return (0);
-	
 	return (1);
 }

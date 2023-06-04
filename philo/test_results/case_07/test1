@@ -1,0 +1,9 @@
+0 Philosopher 2 is eating.
+0 Philosopher 4 is eating.
+200 Philosopher 4 is sleeping.
+200 Philosopher 2 is sleeping.
+200 Philosopher 3 is eating.
+200 Philosopher 1 is eating.
+300 Philosopher 4 is thinking.
+300 Philosopher 2 is thinking.
+311 Philosopher 3 died.

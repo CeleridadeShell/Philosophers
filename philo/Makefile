@@ -12,6 +12,7 @@ SRC				= 	main.c \
 					utils/initialization_utils.c \
 					utils/free_utils.c \
 					utils/time_utils.c \
+					threads/run_threads.c \
 					validation/validation_utils.c
 SRC_PATH		= $(addprefix $(SRC_DIR), $(SRC))
 
