@@ -6,7 +6,7 @@
 /*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 18:34:14 by ccamargo          #+#    #+#             */
-/*   Updated: 2023/06/03 20:40:19 by mcarecho         ###   ########.fr       */
+/*   Updated: 2023/06/04 16:59:26 by mcarecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,10 +77,11 @@ void * monitor_life(void * data_monitor)
 		if (get_current_timestamp(philos[i]) - philos[i]->last_meal > \
 		philos[i]->common_data->time_to_die)
 		{
+
 			while (eats_count < philos[i]->common_data->num_of_philos && philos[eats_count]->meals_had - 1 == philos[eats_count]->common_data->opt_num_of_meals) {
 				eats_count++;
 			}
-			if (eats_count == philos[i]->common_data->num_of_philos) {
+			if (eats_count == philos[i]->common_data->num_of_philos && philos[i]->common_data->opt_num_of_meals != -1) {
 				return (NULL);
 			}
 			philos[i]->common_data->someone_died = 1;
