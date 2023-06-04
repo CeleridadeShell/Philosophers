@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   convert_args.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ccamargo <ccamargo@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 01:18:48 by ccamargo          #+#    #+#             */
-/*   Updated: 2023/06/04 23:04:39 by ccamargo         ###   ########.fr       */
+/*   Updated: 2023/06/04 23:39:36 by mcarecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ t_common_data	*convert_args(char **argv)
 	pthread_mutex_init(common->dead_or_alive, NULL);
 	common->time = malloc(sizeof(pthread_mutex_t));
 	pthread_mutex_init(common->time, NULL);
+	common->meals_had_mutex = malloc(sizeof(pthread_mutex_t));
+	pthread_mutex_init(common->meals_had_mutex, NULL);
 	common->last_meal_mutex = malloc(sizeof(pthread_mutex_t));
 	pthread_mutex_init(common->last_meal_mutex, NULL);
 	while(common->num_of_philos > i)

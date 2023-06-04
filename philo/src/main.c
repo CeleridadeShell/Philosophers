@@ -6,7 +6,7 @@
 /*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 18:34:14 by ccamargo          #+#    #+#             */
-/*   Updated: 2023/06/04 23:28:32 by mcarecho         ###   ########.fr       */
+/*   Updated: 2023/06/04 23:41:48 by mcarecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,9 @@ void	*philo_life(void *philo_data)
 		get_current_timestamp(philo), (philo)->id + 1);
 		pthread_mutex_unlock(philo->common_data->print);
 		usleep((philo)->common_data->time_to_eat * 1000);
+		pthread_mutex_lock(philo->common_data->meals_had_mutex);
 		philo->meals_had++;
+		pthread_mutex_unlock(philo->common_data->meals_had_mutex);
 		pthread_mutex_lock(philo->common_data->last_meal_mutex);
 		philo->last_meal = get_current_timestamp(philo);
 		pthread_mutex_unlock(philo->common_data->last_meal_mutex);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ccamargo <ccamargo@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 18:35:47 by ccamargo          #+#    #+#             */
-/*   Updated: 2023/06/04 22:50:47 by ccamargo         ###   ########.fr       */
+/*   Updated: 2023/06/04 23:38:46 by mcarecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ typedef struct s_common_data
 	pthread_mutex_t *print;
 	pthread_mutex_t *time;
 	pthread_mutex_t *dead_or_alive;
+	pthread_mutex_t *meals_had_mutex;
 	pthread_mutex_t *last_meal_mutex;
 }	t_common_data;
 
