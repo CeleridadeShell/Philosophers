@@ -6,7 +6,7 @@
 /*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 18:34:14 by ccamargo          #+#    #+#             */
-/*   Updated: 2023/06/04 16:59:26 by mcarecho         ###   ########.fr       */
+/*   Updated: 2023/06/04 17:21:24 by mcarecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,24 @@ int verify_end(t_philo * philo)
 	return (0);
 }
 
+void 	*lonely_philo(t_philo *philo)
+{
+	printf("%lld Philosopher %d has taken a fork\n", get_current_timestamp(philo), (philo)->id + 1);
+	usleep((philo)->common_data->time_to_die * 1000);
+	printf("%lld Philosopher %d died.\n", \
+			get_current_timestamp(philo), (philo)->id + 1);
+	return (NULL);
+}
+
 void	*philo_life(void *philo_data)
 {
 	t_philo* philo;
 
 	philo = (t_philo *)philo_data;
+	if(philo->common_data->num_of_philos == 1)
+		return(lonely_philo(philo));
+	if(philo->id % 2 == 0)
+		usleep(1000);
 	while(verify_end(philo) == 0)
 	{
 		pthread_mutex_lock(philo->left_fork);
@@ -72,6 +85,8 @@ void * monitor_life(void * data_monitor)
 	i = 0;
 	eats_count = 0;
 	philos = (t_philo **)data_monitor;
+	if (philos[i]->common_data->num_of_philos == 1)
+		return (NULL);
 	while(1)
 	{
 		if (get_current_timestamp(philos[i]) - philos[i]->last_meal > \
