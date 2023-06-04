@@ -16,7 +16,7 @@ SRC				= 	main.c \
 SRC_PATH		= $(addprefix $(SRC_DIR), $(SRC))
 
 CC				= gcc
-CFLAGS			= -Wall -Wextra -Werror -pthread -g3
+CFLAGS			= -Wall -Wextra -Werror -pthread -g3 
 
 BIN				= ./bin/
 BINARY_OUT		= $(addprefix $(BIN), $(NAME))
