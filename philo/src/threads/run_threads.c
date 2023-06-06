@@ -6,7 +6,7 @@
 /*   By: ccamargo <ccamargo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 01:09:40 by ccamargo          #+#    #+#             */
-/*   Updated: 2023/06/05 01:19:03 by ccamargo         ###   ########.fr       */
+/*   Updated: 2023/06/06 23:44:49 by ccamargo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,22 +42,6 @@ static void	*lonely_philo(t_philo *philo)
 	return (NULL);
 }
 
-/*void	philo_life_2(t_philo *philo)
-{
-	pthread_mutex_lock(philo->common_data->print);
-	printf("%lld Philosopher %d is eating.\n", get_current_timestamp(philo), (philo)->id + 1);
-	pthread_mutex_unlock(philo->common_data->print);
-	usleep((philo)->common_data->time_to_eat * 1000);
-	pthread_mutex_lock(philo->common_data->meals_had_mutex);
-	philo->meals_had++;
-	pthread_mutex_unlock(philo->common_data->meals_had_mutex);
-	pthread_mutex_lock(philo->common_data->last_meal_mutex);
-	philo->last_meal = get_current_timestamp(philo);
-	pthread_mutex_unlock(philo->common_data->last_meal_mutex);
-	pthread_mutex_unlock(philo->left_fork);
-	pthread_mutex_unlock(philo->right_fork);
-}*/
-
 static void	*philo_life(void *philo_data)
 {
 	t_philo	*philo;
@@ -70,27 +54,43 @@ static void	*philo_life(void *philo_data)
 	while (verify_end(philo) == 0)
 	{
 		pthread_mutex_lock(philo->left_fork);
+		if (verify_end(philo) == 1)
+			break ;
+		pthread_mutex_lock(philo->common_data->print);
+		printf("%lld Philosopher %d has taken a fork.\n", get_current_timestamp(philo), (philo)->id + 1);
+		pthread_mutex_unlock(philo->common_data->print);
+		
 		pthread_mutex_lock(philo->right_fork);
+		if (verify_end(philo) == 1)
+			break ;
+		pthread_mutex_lock(philo->common_data->print);
+		printf("%lld Philosopher %d has taken a fork.\n", get_current_timestamp(philo), (philo)->id + 1);
+		pthread_mutex_unlock(philo->common_data->print);
+		
 		if (verify_end(philo) == 1)
 		{
 			pthread_mutex_unlock(philo->left_fork);
 			pthread_mutex_unlock(philo->right_fork);
 			break ;
 		}
-		//philo_life_2(philo);
+		
 		pthread_mutex_lock(philo->common_data->print);
 		printf("%lld Philosopher %d is eating.\n", \
 		get_current_timestamp(philo), (philo)->id + 1);
 		pthread_mutex_unlock(philo->common_data->print);
 		usleep((philo)->common_data->time_to_eat * 1000);
+		
 		pthread_mutex_lock(philo->common_data->meals_had_mutex);
 		philo->meals_had++;
 		pthread_mutex_unlock(philo->common_data->meals_had_mutex);
+		
 		pthread_mutex_lock(philo->common_data->last_meal_mutex);
 		philo->last_meal = get_current_timestamp(philo);
 		pthread_mutex_unlock(philo->common_data->last_meal_mutex);
+		
 		pthread_mutex_unlock(philo->left_fork);
 		pthread_mutex_unlock(philo->right_fork);
+		
 		if (verify_end(philo) == 1)
 			break ;
 		pthread_mutex_lock(philo->common_data->print);
@@ -98,6 +98,7 @@ static void	*philo_life(void *philo_data)
 		get_current_timestamp(philo), (philo)->id + 1);
 		pthread_mutex_unlock(philo->common_data->print);
 		usleep((philo)->common_data->time_to_sleep * 1000);
+		
 		if (verify_end(philo) == 1)
 			break ;
 		pthread_mutex_lock(philo->common_data->print);
