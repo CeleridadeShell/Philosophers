@@ -8,16 +8,14 @@ SRC_DIR			= ./src/
 SRC				= 	main.c \
 					utils/ft_isdigit.c \
 					utils/ft_atoi.c \
-					utils/convert_args.c \
 					utils/initialization_utils.c \
 					utils/free_utils.c \
 					utils/time_utils.c \
-					threads/run_threads.c \
 					validation/validation_utils.c
 SRC_PATH		= $(addprefix $(SRC_DIR), $(SRC))
 
 CC				= gcc
-CFLAGS			= -Wall -Wextra -Werror -pthread -g3 
+CFLAGS			= -Wall -Wextra -Werror -pthread -g3
 
 BIN				= ./bin/
 BINARY_OUT		= $(addprefix $(BIN), $(NAME))

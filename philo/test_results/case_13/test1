@@ -1,110 +1,165 @@
-0 Philosopher 2 is eating.
-0 Philosopher 4 is eating.
-100 Philosopher 4 is sleeping.
-100 Philosopher 2 is sleeping.
-100 Philosopher 1 is eating.
-100 Philosopher 3 is eating.
-200 Philosopher 4 is thinking.
-200 Philosopher 2 is thinking.
-200 Philosopher 1 is sleeping.
-200 Philosopher 5 is eating.
-200 Philosopher 2 is eating.
-200 Philosopher 3 is sleeping.
-300 Philosopher 1 is thinking.
-300 Philosopher 2 is sleeping.
-300 Philosopher 5 is sleeping.
-300 Philosopher 1 is eating.
-300 Philosopher 4 is eating.
-300 Philosopher 3 is thinking.
-400 Philosopher 2 is thinking.
-400 Philosopher 4 is sleeping.
-400 Philosopher 1 is sleeping.
-400 Philosopher 3 is eating.
-400 Philosopher 5 is thinking.
-400 Philosopher 5 is eating.
-500 Philosopher 4 is thinking.
-500 Philosopher 1 is thinking.
-500 Philosopher 5 is sleeping.
-500 Philosopher 3 is sleeping.
-500 Philosopher 4 is eating.
-500 Philosopher 2 is eating.
-600 Philosopher 5 is thinking.
-600 Philosopher 4 is sleeping.
-600 Philosopher 3 is thinking.
-600 Philosopher 2 is sleeping.
-600 Philosopher 3 is eating.
-600 Philosopher 1 is eating.
-701 Philosopher 4 is thinking.
-701 Philosopher 2 is thinking.
-701 Philosopher 1 is sleeping.
-701 Philosopher 5 is eating.
-701 Philosopher 2 is eating.
-701 Philosopher 3 is sleeping.
-801 Philosopher 1 is thinking.
-801 Philosopher 3 is thinking.
-801 Philosopher 2 is sleeping.
-801 Philosopher 4 is eating.
-801 Philosopher 5 is sleeping.
-801 Philosopher 1 is eating.
-901 Philosopher 5 is thinking.
-901 Philosopher 4 is sleeping.
-901 Philosopher 1 is sleeping.
-901 Philosopher 5 is eating.
-901 Philosopher 2 is thinking.
-901 Philosopher 3 is eating.
-1001 Philosopher 4 is thinking.
-1001 Philosopher 1 is thinking.
-1001 Philosopher 3 is sleeping.
-1001 Philosopher 2 is eating.
-1001 Philosopher 5 is sleeping.
-1001 Philosopher 4 is eating.
-1101 Philosopher 3 is thinking.
-1101 Philosopher 2 is sleeping.
-1101 Philosopher 1 is eating.
-1101 Philosopher 5 is thinking.
-1101 Philosopher 4 is sleeping.
-1101 Philosopher 3 is eating.
-1201 Philosopher 2 is thinking.
-1201 Philosopher 1 is sleeping.
-1201 Philosopher 5 is eating.
-1201 Philosopher 4 is thinking.
-1201 Philosopher 3 is sleeping.
-1201 Philosopher 2 is eating.
-1301 Philosopher 1 is thinking.
-1301 Philosopher 5 is sleeping.
-1301 Philosopher 4 is eating.
-1301 Philosopher 3 is thinking.
-1301 Philosopher 1 is eating.
-1301 Philosopher 2 is sleeping.
-1401 Philosopher 5 is thinking.
-1401 Philosopher 4 is sleeping.
-1401 Philosopher 3 is eating.
-1401 Philosopher 1 is sleeping.
-1401 Philosopher 5 is eating.
-1401 Philosopher 2 is thinking.
-1501 Philosopher 4 is thinking.
-1502 Philosopher 1 is thinking.
-1502 Philosopher 5 is sleeping.
-1502 Philosopher 3 is sleeping.
-1502 Philosopher 4 is eating.
-1502 Philosopher 2 is eating.
-1602 Philosopher 5 is thinking.
-1602 Philosopher 4 is sleeping.
-1602 Philosopher 2 is sleeping.
-1602 Philosopher 3 is thinking.
-1602 Philosopher 1 is eating.
-1602 Philosopher 3 is eating.
-1702 Philosopher 4 is thinking.
-1702 Philosopher 2 is thinking.
-1702 Philosopher 1 is sleeping.
-1702 Philosopher 5 is eating.
-1702 Philosopher 2 is eating.
-1702 Philosopher 3 is sleeping.
-1802 Philosopher 1 is thinking.
-1802 Philosopher 3 is thinking.
-1802 Philosopher 1 is eating.
-1802 Philosopher 5 is sleeping.
-1802 Philosopher 4 is eating.
-1902 Philosopher 5 is thinking.
-1902 Philosopher 3 is eating.
-1902 Philosopher 5 is eating.
+0 Philosopher 1 has taken a fork.
+0 Philosopher 1 has taken a fork.
+0 Philosopher 1 is eating.
+1 Philosopher 3 has taken a fork.
+1 Philosopher 3 has taken a fork.
+1 Philosopher 3 is eating.
+101 Philosopher 3 is sleeping.
+101 Philosopher 5 has taken a fork.
+101 Philosopher 5 has taken a fork.
+101 Philosopher 5 is eating.
+101 Philosopher 1 is sleeping.
+101 Philosopher 2 has taken a fork.
+101 Philosopher 2 has taken a fork.
+101 Philosopher 2 is eating.
+201 Philosopher 3 is thinking.
+201 Philosopher 1 is thinking.
+201 Philosopher 4 has taken a fork.
+201 Philosopher 4 has taken a fork.
+201 Philosopher 4 is eating.
+201 Philosopher 2 is sleeping.
+201 Philosopher 5 is sleeping.
+202 Philosopher 1 has taken a fork.
+202 Philosopher 1 has taken a fork.
+202 Philosopher 1 is eating.
+302 Philosopher 4 is sleeping.
+302 Philosopher 5 is thinking.
+302 Philosopher 2 is thinking.
+302 Philosopher 3 has taken a fork.
+302 Philosopher 3 has taken a fork.
+302 Philosopher 3 is eating.
+303 Philosopher 1 is sleeping.
+303 Philosopher 5 has taken a fork.
+303 Philosopher 5 has taken a fork.
+303 Philosopher 5 is eating.
+402 Philosopher 4 is thinking.
+402 Philosopher 3 is sleeping.
+402 Philosopher 2 has taken a fork.
+402 Philosopher 2 has taken a fork.
+402 Philosopher 2 is eating.
+403 Philosopher 1 is thinking.
+403 Philosopher 5 is sleeping.
+403 Philosopher 4 has taken a fork.
+403 Philosopher 4 has taken a fork.
+403 Philosopher 4 is eating.
+502 Philosopher 3 is thinking.
+502 Philosopher 2 is sleeping.
+502 Philosopher 1 has taken a fork.
+502 Philosopher 1 has taken a fork.
+502 Philosopher 1 is eating.
+503 Philosopher 5 is thinking.
+503 Philosopher 4 is sleeping.
+503 Philosopher 3 has taken a fork.
+503 Philosopher 3 has taken a fork.
+503 Philosopher 3 is eating.
+602 Philosopher 2 is thinking.
+602 Philosopher 1 is sleeping.
+603 Philosopher 5 has taken a fork.
+603 Philosopher 5 has taken a fork.
+603 Philosopher 5 is eating.
+604 Philosopher 4 is thinking.
+604 Philosopher 3 is sleeping.
+604 Philosopher 2 has taken a fork.
+604 Philosopher 2 has taken a fork.
+604 Philosopher 2 is eating.
+703 Philosopher 1 is thinking.
+703 Philosopher 5 is sleeping.
+703 Philosopher 4 has taken a fork.
+703 Philosopher 4 has taken a fork.
+703 Philosopher 4 is eating.
+704 Philosopher 3 is thinking.
+704 Philosopher 1 has taken a fork.
+704 Philosopher 1 has taken a fork.
+704 Philosopher 1 is eating.
+704 Philosopher 2 is sleeping.
+803 Philosopher 5 is thinking.
+803 Philosopher 4 is sleeping.
+803 Philosopher 3 has taken a fork.
+803 Philosopher 3 has taken a fork.
+803 Philosopher 3 is eating.
+804 Philosopher 1 is sleeping.
+804 Philosopher 2 is thinking.
+804 Philosopher 5 has taken a fork.
+804 Philosopher 5 has taken a fork.
+804 Philosopher 5 is eating.
+903 Philosopher 4 is thinking.
+903 Philosopher 3 is sleeping.
+903 Philosopher 2 has taken a fork.
+903 Philosopher 2 has taken a fork.
+903 Philosopher 2 is eating.
+904 Philosopher 1 is thinking.
+904 Philosopher 5 is sleeping.
+904 Philosopher 4 has taken a fork.
+904 Philosopher 4 has taken a fork.
+904 Philosopher 4 is eating.
+1003 Philosopher 3 is thinking.
+1004 Philosopher 2 is sleeping.
+1004 Philosopher 1 has taken a fork.
+1004 Philosopher 1 has taken a fork.
+1004 Philosopher 1 is eating.
+1005 Philosopher 5 is thinking.
+1005 Philosopher 4 is sleeping.
+1005 Philosopher 3 has taken a fork.
+1005 Philosopher 3 has taken a fork.
+1005 Philosopher 3 is eating.
+1104 Philosopher 2 is thinking.
+1104 Philosopher 1 is sleeping.
+1104 Philosopher 5 has taken a fork.
+1104 Philosopher 5 has taken a fork.
+1104 Philosopher 5 is eating.
+1105 Philosopher 4 is thinking.
+1105 Philosopher 3 is sleeping.
+1105 Philosopher 2 has taken a fork.
+1105 Philosopher 2 has taken a fork.
+1105 Philosopher 2 is eating.
+1204 Philosopher 1 is thinking.
+1204 Philosopher 5 is sleeping.
+1204 Philosopher 4 has taken a fork.
+1204 Philosopher 4 has taken a fork.
+1204 Philosopher 4 is eating.
+1205 Philosopher 3 is thinking.
+1205 Philosopher 2 is sleeping.
+1205 Philosopher 1 has taken a fork.
+1205 Philosopher 1 has taken a fork.
+1205 Philosopher 1 is eating.
+1304 Philosopher 5 is thinking.
+1305 Philosopher 3 has taken a fork.
+1305 Philosopher 3 has taken a fork.
+1305 Philosopher 3 is eating.
+1305 Philosopher 4 is sleeping.
+1305 Philosopher 2 is thinking.
+1305 Philosopher 1 is sleeping.
+1306 Philosopher 5 has taken a fork.
+1306 Philosopher 5 has taken a fork.
+1306 Philosopher 5 is eating.
+1405 Philosopher 4 is thinking.
+1405 Philosopher 2 has taken a fork.
+1405 Philosopher 2 has taken a fork.
+1405 Philosopher 2 is eating.
+1405 Philosopher 3 is sleeping.
+1406 Philosopher 1 is thinking.
+1406 Philosopher 5 is sleeping.
+1406 Philosopher 4 has taken a fork.
+1406 Philosopher 4 has taken a fork.
+1406 Philosopher 4 is eating.
+1505 Philosopher 3 is thinking.
+1505 Philosopher 2 is sleeping.
+1505 Philosopher 1 has taken a fork.
+1505 Philosopher 1 has taken a fork.
+1505 Philosopher 1 is eating.
+1506 Philosopher 5 is thinking.
+1506 Philosopher 4 is sleeping.
+1506 Philosopher 3 has taken a fork.
+1506 Philosopher 3 has taken a fork.
+1506 Philosopher 3 is eating.
+1605 Philosopher 2 is thinking.
+1605 Philosopher 5 has taken a fork.
+1605 Philosopher 5 has taken a fork.
+1605 Philosopher 5 is eating.
+1606 Philosopher 4 is thinking.
+1606 Philosopher 2 has taken a fork.
+1606 Philosopher 2 has taken a fork.
+1606 Philosopher 2 is eating.
+1706 Philosopher 4 has taken a fork.
+1706 Philosopher 4 has taken a fork.
+1706 Philosopher 4 is eating.
