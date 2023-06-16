@@ -1,8 +1,8 @@
 0 Philosopher 1 has taken a fork.
-1 Philosopher 1 has taken a fork.
-1 Philosopher 1 is eating.
-102 Philosopher 3 has taken a fork.
-102 Philosopher 3 has taken a fork.
-102 Philosopher 3 is eating.
-102 Philosopher 1 is sleeping.
+0 Philosopher 1 has taken a fork.
+0 Philosopher 1 is eating.
+101 Philosopher 1 is sleeping.
+101 Philosopher 3 has taken a fork.
+101 Philosopher 3 has taken a fork.
+101 Philosopher 3 is eating.
 200 Philosopher 3 died.

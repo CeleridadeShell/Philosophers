@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: christian <christian@student.42.fr>        +#+  +:+       +#+        */
+/*   By: ccamargo <ccamargo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 18:35:47 by ccamargo          #+#    #+#             */
-/*   Updated: 2023/06/15 19:51:14 by christian        ###   ########.fr       */
+/*   Updated: 2023/06/17 01:48:58 by ccamargo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <sys/time.h>
+
+# define FORK 0
+# define EAT 1
+# define SLEEP 2
+# define THINK 3
+# define DIE 4
 
 typedef struct s_common_data
 {
@@ -56,10 +62,21 @@ void			initialize_philo(t_philo *philo, t_common_data *common, int i);
 void			set_timestamps(t_philo *philo);
 long long		get_current_timestamp(t_philo *philo);
 
+//Threads
+void			run_threads(t_common_data *common, pthread_t *philo_threads, \
+t_philo **philos);
+void			*philo_life(void *philo_data);
+void			*monitor_thread(void *philos_data);
+int				verify_end(t_philo *philo);
+
+// Print
+void			prints(t_philo *philo, int action);
+
 //Free Utils
 void			free_philos(t_philo **philos, int num_of_philos);
 void			free_common_data(t_common_data *common);
 
+// Auxiliar Functions
 int				ft_isdigit(int c);
 int				ft_atoi(const char *nptr);
 

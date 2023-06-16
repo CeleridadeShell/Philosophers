@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   time_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: christian <christian@student.42.fr>        +#+  +:+       +#+        */
+/*   By: ccamargo <ccamargo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 02:26:54 by ccamargo          #+#    #+#             */
-/*   Updated: 2023/06/15 19:35:09 by christian        ###   ########.fr       */
+/*   Updated: 2023/06/16 23:46:06 by ccamargo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ long long	get_current_timestamp(t_philo *philo)
 		printf("Error geting time of day!\n");
 		return (-1);
 	}
-	return_time = (current_time.tv_sec * 1000) + (current_time.tv_usec / 1000) - \
-	philo->common_data->timestamp_init;
+	return_time = (current_time.tv_sec * 1000) + (current_time.tv_usec / 1000) \
+	- philo->common_data->timestamp_init;
 	return (return_time);
 }

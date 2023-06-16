@@ -6,7 +6,7 @@
 /*   By: ccamargo <ccamargo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 02:22:21 by ccamargo          #+#    #+#             */
-/*   Updated: 2023/06/05 02:10:14 by ccamargo         ###   ########.fr       */
+/*   Updated: 2023/06/17 01:39:14 by ccamargo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,7 @@ void	free_common_data(t_common_data *common)
 	free(common->fork);
 	free(common->print);
 	free(common->get_time);
+	free(common->dead_or_alive_mutex);
+	free(common->last_meal_mutex);
 	free(common);
 }

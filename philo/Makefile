@@ -6,11 +6,15 @@ HEADER_PATH		= $(addprefix $(HEADER_DIR), $(HEADER))
 
 SRC_DIR			= ./src/
 SRC				= 	main.c \
+					threads/threads.c \
+					threads/philos_threads.c \
+					threads/monitor_thread.c \
 					utils/ft_isdigit.c \
 					utils/ft_atoi.c \
 					utils/initialization_utils.c \
 					utils/free_utils.c \
 					utils/time_utils.c \
+					utils/print.c \
 					validation/validation_utils.c
 SRC_PATH		= $(addprefix $(SRC_DIR), $(SRC))
 
