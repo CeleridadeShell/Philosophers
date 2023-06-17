@@ -18,6 +18,20 @@ SRC				= 	main.c \
 					validation/validation_utils.c
 SRC_PATH		= $(addprefix $(SRC_DIR), $(SRC))
 
+OBJ_DIR			= ./objs/
+OBJ				=	main.o \
+					threads.o \
+					philos_threads.o \
+					monitor_thread.o \
+					ft_isdigit.o \
+					ft_atoi.o \
+					initialization_utils.o \
+					free_utils.o \
+					time_utils.o \
+					print.o \
+					validation_utils.o
+OBJ_PATH		= $(addprefix $(OBJ_DIR), $(OBJ))
+
 CC				= gcc
 CFLAGS			= -Wall -Wextra -Werror -pthread -g3
 
@@ -27,14 +41,17 @@ BINARY_OUT		= $(addprefix $(BIN), $(NAME))
 all: $(BINARY_OUT)
 
 $(BINARY_OUT): $(SRC_PATH) $(HEADER_PATH)
+	@ $(CC) $(CFLAGS) -c $(SRC_PATH) -I $(HEADER_DIR)
+	@ mkdir -p $(OBJ_DIR)
+	@ mv $(OBJ) $(OBJ_DIR)
+	@ $(CC) $(CFLAGS) $(OBJ_PATH) -o $(NAME)
 	@ mkdir -p $(BIN)
-	@ $(CC) $(CFLAGS) $(SRC_PATH) -I $(HEADER_DIR) -o $(NAME)
 	@ mv $(NAME) $(BIN)
 	@ echo "$(NAME) compiled successfully!"
 
-#clean:
-#	@ $(MAKE) clean -C $(LIBFT_DIR)
-#	@ echo "libft object files erased successfully!"
+clean:
+	@ rm -rf $(OBJ_DIR)
+	@ echo "object files erased successfully!"
 
 fclean: clean
 	@ rm -f $(BINARY_OUT)

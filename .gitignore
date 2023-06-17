@@ -54,3 +54,4 @@ dkms.conf
 # Relevant to this project
 /philo/bin
 .vscode
+/philo/test_results
