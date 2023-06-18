@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philos_threads.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ccamargo <ccamargo@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 00:31:42 by ccamargo          #+#    #+#             */
-/*   Updated: 2023/06/17 00:32:06 by ccamargo         ###   ########.fr       */
+/*   Updated: 2023/06/18 18:58:51 by mcarecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ static void	while_life_2(t_philo *philo)
 	prints(philo, FORK);
 	prints(philo, FORK);
 	prints(philo, EAT);
-	usleep((philo)->common_data->time_to_eat * 1000);
 	pthread_mutex_lock(philo->common_data->dead_or_alive_mutex);
 	philo->last_meal = get_current_timestamp(philo);
 	philo->meals_had++;
 	pthread_mutex_unlock(philo->common_data->dead_or_alive_mutex);
+	usleep((philo)->common_data->time_to_eat * 1000);
 	pthread_mutex_unlock(philo->left_fork);
 	pthread_mutex_unlock(philo->right_fork);
 }
